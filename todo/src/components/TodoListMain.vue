@@ -3,6 +3,7 @@ export default {
   name: "TodoListMain",
 };
 </script>
+
 <script setup>
 import { inject, provide, ref, watch } from "vue";
 import { useFilter } from "../compositions/filters";
@@ -47,9 +48,10 @@ const filters = {
 provide("filters", filters);
 
 const groupBy = (todos) => {
+  // 입력 받는 todos를 date 별로 묶음
   return todos.reduce((acc, cur) => {
-    acc[cur["date"]] = acc[cur["date"]] || [];
-    acc[cur["date"]].push(cur);
+    acc[cur["date"]] = acc[cur["date"]] || []; // 누적
+    acc[cur["date"]].push(cur); // 누적 + 새 거
     return acc;
   }, {});
 };

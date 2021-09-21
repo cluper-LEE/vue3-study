@@ -3,6 +3,7 @@ export default {
   name: "TodoListNew",
 };
 </script>
+
 <script setup>
 import { inject, reactive, toRefs } from "vue";
 

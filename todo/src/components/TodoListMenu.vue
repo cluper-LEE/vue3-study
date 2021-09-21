@@ -3,8 +3,9 @@ export default {
   name: "TodoListMenu",
 };
 </script>
+
 <script setup>
-import { defineEmits, inject, computed, ref, watch } from "vue";
+import { inject, computed, ref, watch } from "vue";
 const emit = defineEmits(["change-filter"]);
 const filters = inject("filters");
 const filter = ref(0);
